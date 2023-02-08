@@ -1,4 +1,4 @@
-# add-file
+# node-add-file
 
 Elegantly add files to `FormData` objects 📋.
 
@@ -6,7 +6,7 @@ Elegantly add files to `FormData` objects 📋.
 ## Installation
 
 ```sh
-npm i add-file
+npm i node-add-file
 ```
 
 
@@ -15,7 +15,7 @@ npm i add-file
 Create a "file adder".
 
 ```js
-import addFile from 'add-file'
+import addFile from 'node-add-file'
 
 const addReadme = addFile('./README.md')
 ```
@@ -28,10 +28,12 @@ addReadme(formA) // Adds README.md to formA.
 
 addReadme(formB) // Adds README.md to formB.
 
-addReadme(formA, { type: 'text/markdown' }) // Adds README.md to formA with mime type `text/markdown`.
+addReadme(formA, name = 'README') // Adds README.md to formA with name `README`.
 
-addReadme(formA, { name: 'README' }) // Adds README.md to formA with the field name `README`.
+addReadme(formA, name = 'README', type = 'text/markdown') // Also sets the mime type to `text/markdown`
 ```
+
+The default name is `file` and the default mime type is `text/plain`.
 
 
 ## API
